@@ -1,10 +1,10 @@
-package hometasks.task2;
+package hometasks;
 
 public class ProgramDistanceBetweenPoints {
 
   public static void main(String[] args) {
 
-    Point pointA = new Point(2.3, -1);
+    Point pointA = new Point(1, 2);
     Point pointB = new Point(0, 0);
     Point pointC = new Point(-10, -25);
     Point pointD = new Point(6.52, 0);

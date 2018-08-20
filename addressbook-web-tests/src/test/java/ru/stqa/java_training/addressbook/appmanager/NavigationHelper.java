@@ -2,7 +2,6 @@ package ru.stqa.java_training.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class NavigationHelper extends HelperBase{
 
@@ -27,6 +26,10 @@ public class NavigationHelper extends HelperBase{
   }
 
   public void gotoAddNewContactPage() {
+    if(isElementPresent(By.tagName("h1"))
+                        && wd.findElement(By.tagName("h1")).getText().equals("Edit / add address book entry")){
+      return;
+    }
     click(By.linkText("add new"));
   }
 }

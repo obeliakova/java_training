@@ -52,4 +52,14 @@ public class ContactHelper extends HelperBase{
   public void editContact() {
     click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
   }
+
+  public void createContact(ContactData contactData, boolean creation) {
+    fillContactForm(contactData, creation);
+    submitContactCreation();
+    returnToHomePage();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }

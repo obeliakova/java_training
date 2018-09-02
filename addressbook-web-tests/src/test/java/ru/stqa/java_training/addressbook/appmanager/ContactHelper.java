@@ -77,7 +77,7 @@ public class ContactHelper extends HelperBase{
     List<WebElement> rowsInTable = wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']"));
     for (WebElement rowInTable : rowsInTable) {
 
-      String id = rowInTable.findElement(By.xpath("./td[1]/input")).getAttribute("value");
+      int id = Integer.parseInt(rowInTable.findElement(By.xpath("./td[1]/input")).getAttribute("value"));
       String lastName = rowInTable.findElement(By.xpath("./td[2]")).getText();
       String firstName = rowInTable.findElement(By.xpath("./td[3]")).getText();
       String email = rowInTable.findElement(By.xpath("./td[5]/a")).getText();

@@ -72,6 +72,10 @@ public class ContactData {
     return group;
   }
 
+  public void setId(int id) {
+    this.id = id;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -79,17 +83,11 @@ public class ContactData {
     ContactData that = (ContactData) o;
     return id == that.id &&
             Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname) &&
-            Objects.equals(mobile, that.mobile) &&
-            Objects.equals(email, that.email);
+            Objects.equals(lastname, that.lastname);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstname, lastname, mobile, email);
-  }
-
-  public void setId(int id) {
-    this.id = id;
+    return Objects.hash(id, firstname, lastname);
   }
 }
